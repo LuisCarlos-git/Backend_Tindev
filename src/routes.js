@@ -1,14 +1,11 @@
 const express = require('express');
-
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-    res.json({hello: 'world'})
-});
+const DevController = require('./controllers/DevController');
 
-routes.post('/devs', (req, res) => {
-    return res.json(req.body)
-});
+
+
+routes.post('/devs', DevController.store);
 
 
 
